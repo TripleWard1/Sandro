@@ -58,6 +58,8 @@ export default function FraggerEliteHUD() {
             <span style={s.statusText}>TRANSMISSÃO_ATIVA // 4K</span>
             <div style={s.energyLine} />
           </div>
+          {/* DADO MINIMALISTA ADICIONADO */}
+          <div style={s.subtleDedication}>COM PAI SANDRO</div>
         </div>
       </div>
 
@@ -69,8 +71,8 @@ export default function FraggerEliteHUD() {
             <div style={s.socialContent}>
               <span style={s.socialLabel}>TWITCH.TV/fragger_sandropt</span>
               <div style={s.counterRow}>
-                <div style={s.liveIcon}>LIVE</div>
-                <span style={s.counterValue}>1,243</span>
+                <div style={s.liveIcon}>AO VIVO</div>
+                <span style={s.counterValue}></span>
               </div>
             </div>
           </div>
@@ -79,15 +81,15 @@ export default function FraggerEliteHUD() {
             <div style={s.socialContent}>
               <span style={s.socialLabel}>YOUTUBE/Fragger_SandroPT</span>
               <div style={s.counterRow}>
-                <div style={{ ...s.liveIcon, background: '#FF0000' }}>LIVE</div>
-                <span style={s.counterValue}>856</span>
+                <div style={{ ...s.liveIcon, background: '#FF0000' }}>AO VIVO</div>
+                <span style={s.counterValue}></span>
               </div>
             </div>
           </div>
         </div>
 
         <div style={s.partnerPremium}>
-          <div style={s.partnerHeader}>SPONSOR OFICIAL</div>
+          <div style={s.partnerHeader}>PATROCÍNIO OFICIAL</div>
           <div style={s.partnerSlot}>
             <img src={PARCEIROS[idx]} style={s.partnerImg} alt="P" />
           </div>
@@ -109,7 +111,7 @@ export default function FraggerEliteHUD() {
               clipPath: 'polygon(10% 0, 100% 0, 90% 100%, 0% 100%)',
             }}
           >
-            <div style={s.moduleTag}>SUPPORT A CREATOR</div>
+            <div style={s.moduleTag}>APOIA UM CRIADOR</div>
             <div style={s.vbuckRow}>
               <div style={s.vbuckHex}>V</div>
               <span style={s.codeTitle}>FRAGGER</span>
@@ -131,41 +133,38 @@ export default function FraggerEliteHUD() {
             }}
           >
             <div style={{ ...s.moduleTag, color: '#f97316' }}>
-              INSTANT SAVINGS
+              DESCONTOS IMEDIATOS
             </div>
             <img
               src="https://www.instant-gaming.com/themes/igv2/images/logos/logo-instant-gaming.svg"
               style={s.igLogoFull}
               alt="IG"
             />
-            <div style={s.moduleFooter}>Usa O link na descrição</div>
+            <div style={s.moduleFooter}>USA O LINK NA DESCRIÇÃO</div>
             <div style={s.shimmerSweep} />
           </div>
         </div>
       </div>
 
-      {/* 4. NOVO DESIGN DA BARRA INFERIOR (CYBER-TECH) */}
+      {/* 4. BARRA INFERIOR (CYBER-TECH) */}
       <div style={s.newTickerContainer}>
-        {/* Slot 1 */}
         <div style={s.cyberSlot}>
-          <div style={s.cyberTag}>LAST_RECRUIT</div>
+          <div style={s.cyberTag}>ÚLTIMO_RECRUTA</div>
           <div style={s.cyberValuePlaceholder}>---</div>
           <div style={s.cyberCorner} />
         </div>
 
-        {/* Separador Central Estilizado */}
         <div style={s.cyberDivider}>
           <div style={s.dividerDot} />
           <div style={s.dividerLine} />
           <div style={s.dividerDot} />
         </div>
 
-        {/* Slot 2 */}
         <div
           style={{ ...s.cyberSlot, borderTop: `2px solid ${UI.colors.epic}` }}
         >
           <div style={{ ...s.cyberTag, color: UI.colors.epic }}>
-            TOP_DONATION
+            MAIOR_DONATIVO
           </div>
           <div style={s.cyberValuePlaceholder}>---</div>
           <div
@@ -182,9 +181,8 @@ export default function FraggerEliteHUD() {
           <div style={s.dividerDot} />
         </div>
 
-        {/* Slot 3 */}
         <div style={s.cyberSlot}>
-          <div style={s.cyberTag}>MISSION_GOAL</div>
+          <div style={s.cyberTag}>META_DA_MISSÃO</div>
           <div style={s.cyberValuePlaceholder}>---</div>
           <div style={s.cyberCorner} />
         </div>
@@ -211,7 +209,6 @@ const s: { [key: string]: React.CSSProperties } = {
     position: 'relative',
     overflow: 'hidden',
   },
-  // ... (estilos anteriores mantidos para logoHero, docks, etc)
   logoHero: {
     position: 'absolute',
     top: '40px',
@@ -266,6 +263,15 @@ const s: { [key: string]: React.CSSProperties } = {
     height: '1px',
     background: UI.colors.accent,
     animation: 'flow 3s infinite',
+  },
+  subtleDedication: {
+    fontSize: '9px',
+    fontWeight: '700',
+    opacity: 0.4,
+    marginTop: '8px',
+    letterSpacing: '1px',
+    borderLeft: `2px solid ${UI.colors.accent}`,
+    paddingLeft: '6px',
   },
   leftDock: {
     position: 'absolute',
@@ -376,8 +382,6 @@ const s: { [key: string]: React.CSSProperties } = {
   vbuckRow: { display: 'flex', alignItems: 'center' },
   moduleFooter: { fontSize: '9px', opacity: 0.5, marginTop: '5px' },
   igLogoFull: { width: '150px' },
-
-  // --- NOVO DESIGN TICKER ---
   newTickerContainer: {
     position: 'absolute',
     bottom: '40px',
@@ -412,7 +416,7 @@ const s: { [key: string]: React.CSSProperties } = {
     fontStyle: 'italic',
     color: '#FFF',
     marginTop: '2px',
-    opacity: 0.2, // Quase invisível para tu colocares o OBS por cima
+    opacity: 0.2,
   },
   cyberCorner: {
     position: 'absolute',
